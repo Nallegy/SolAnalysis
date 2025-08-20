@@ -480,14 +480,14 @@
                 
                 const prompt = `Acting as a ${role} with a specialized focus on ${focus}, generate a concise yet insightful SWOT analysis for investing in New Mexico's "${pillarTitle}" pillar. Analyze the second-order effects relevant to my focus. For example, if the focus is Agriculture, consider water rights and logistics. If the focus is National Security, consider supply chain resilience and dual-use technologies. The response must be in Markdown format with clear headings for Strengths, Weaknesses, Opportunities, and Threats.`;
 
-                const apiKey = "AIzaSyCv9cWlYJ2j_bV0X8BFyEnOk9XBIywQpjU"; // <-- PASTE YOUR GOOGLE AI API KEY HERE
+                const apiKey = "AIzaSyDqUE-qnBeHCM2tbEzXBhKQOVesJCx4HaI"; // <-- PASTE YOUR GOOGLE AI API KEY HERE
                 if (apiKey === "YOUR_API_KEY_HERE" || !apiKey) {
                     modalBody.innerHTML = '<p class="text-red-500 font-semibold">API Key Error:</p><p class="text-gray-600 mt-2">The API key is missing. To enable this feature, please get a free API key from Google AI Studio and add it to the `apiKey` variable in the code.</p>';
                     return;
                 }
                 
                 const payload = { contents: [{ role: "user", parts: [{ text: prompt }] }] };
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
                 
                 let retries = 3;
                 let delay = 1000;
